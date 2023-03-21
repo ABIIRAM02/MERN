@@ -6,16 +6,15 @@ const PORT = 5000;
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-//require database models
-const User = require("./models/user");
-const AddedData = require("./models/addData");
-
-
 //connecting to database
 const dbURL = "mongodb://localhost:27017/foodie";
 mongoose.connect(dbURL).then(() => {
   console.log("connected to database");
 });
+
+//require database models
+const User = require("./models/user");
+const AddedData = require("./models/addData");
 
 //middleware
 app.use(express.json());
